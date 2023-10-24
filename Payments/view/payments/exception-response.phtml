@@ -1,0 +1,48 @@
+<?php
+    $message = null;
+    $description = null;
+?>
+
+<div class="reisespage-banner">
+    <div class="banner_img singlevoucher-banner">
+        <div class="banner_overlay">
+            <div class="banner_content">
+                <div class="banner_content_title container_full" data-title="<?php echo $this->translate('VOUCHERS'); ?>">
+                    <?php echo $this->translate('VOUCHERS'); ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container_full">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="pay-status-section">
+
+                <?php
+                    $message = $this->translate('Error!');
+                    $description = '<p>' . $this->translate($details['error_message']) . '</p>';
+                ?>
+
+                <img src="<?php echo $this->basePath('/frontend/images/declined_mark.png'); ?>" class="pay-status-image"/>
+
+                <!-- Payment Status Message -->
+                <?php if (!empty($message)): ?>
+                    <div class="status-message theme-title">
+                        <?php echo $message; ?>
+                    </div>
+                <?php endif; ?>
+
+                <!-- Payer Information -->
+                <?php if (!empty($description)): ?>
+                    <div class="payer_info">
+                        <?php echo $description; ?>
+                        <a href="<?php echo $this->serverUrl(); ?>"><?php echo $this->translate('Visit our website.'); ?></a>
+                    </div>
+                <?php endif; ?>
+
+            </div>
+        </div>
+    </div>
+</div>
